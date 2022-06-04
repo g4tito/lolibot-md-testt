@@ -1,6 +1,9 @@
-let cp = require('child_process')
-let { promisify } = require('util')
-let exec = promisify(cp.exec).bind(cp)
+import cp from 'child_process'
+import { promisify } from 'util'
+
+//let cp = require('child_process')
+//let { promisify } = require('util')
+//let exec = promisify(cp.exec).bind(cp)
 
 let handler = async (m, { conn, usedprefix, command, text }) => {
   try {
