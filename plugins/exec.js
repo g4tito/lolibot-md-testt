@@ -1,6 +1,9 @@
 import syntaxerror from 'syntax-error'
 import util from 'util'
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const require = createRequire(__dirname)
+
 let handler = async (m, _2) => {
   let { conn, usedPrefix, command, text, noPrefix, args, groupMetadata } = _2
   let _return
