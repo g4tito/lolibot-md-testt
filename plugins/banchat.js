@@ -1,5 +1,5 @@
 let handler = async (m) => {
-if (!(m.chat in global.db.data.chats) return m.reply('Este grupo no está registrado en la base de datos!')
+if (!(m.chat in global.db.data.chats)) return m.reply('Este grupo no está registrado en la base de datos!') 
 let chat = global.db.data.chats[m.chat]
 if (chat.isBanned) return m.reply('Este grupo ya está muteado!')
 chat.isBanned = true
