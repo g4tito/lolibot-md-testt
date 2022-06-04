@@ -311,9 +311,10 @@ export async function handler(chatUpdate) {
         } catch (e) {
             console.error(e)
         }
+        let sOwner = [global.conn.user.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         if (opts['nyimak'])
             return
-        if (!m.fromMe && opts['self'])
+        if (!m.fromMe && !sOwner && opts['self'])
             return
         if (opts['pconly'] && m.chat.endsWith('g.us'))
             return
