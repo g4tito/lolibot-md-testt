@@ -2,7 +2,7 @@ let handler = async (m, { conn, usedprefix, command, text }) => {
   try {
    return m.reply(JSON.stringify(eval(command.trimStart() + ' ' + text.trimEnd()), null, "\t"))
   } catch (err) {
-   e = String(err);
+   let e = String(err);
    m.reply(e);
   }
 }
