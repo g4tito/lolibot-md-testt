@@ -1,6 +1,4 @@
 let handler = async(m, { isOwner, isAdmin, conn, text, participants, args, command }) => {
-let pesan = args.join` `
-let oi = `*𝙼𝙴𝙽𝚂𝙰𝙹𝙴:* ${pesan}`
 let teks = `\t\t\t*‧ 🏷️ Mencionar Usuarios 🏷️ ‧*
 
 *• Mensaje:* ${text ? text : '×'}
