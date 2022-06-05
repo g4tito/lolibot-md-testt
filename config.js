@@ -2,11 +2,7 @@ import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
-global.owner = [
-  ['51940617554', '👑 Mystic - Creador 👑', true],
-  ['50575008120', '🤖 Mystic - Bot 🤖', true],
-  ['17722386341']
-]
+global.owner = ['51940617554']
 global.mods = [] 
 global.prems = [] 
 global.APIs = { // API Prefix
