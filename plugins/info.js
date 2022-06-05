@@ -114,14 +114,14 @@ let info = `
 🐋〃 Chat Privado: ${chats.length - groups.length}
 ❄️〃 Chat de Grupos: ${groups.length}
 🐋〃 Chat Totales: ${chats.length}
-❄️〃 Tiempo activo: ${uptime
+❄️〃 Tiempo activo: ${uptime}
 🐋〃 Usuarios: ${totalreg} Numeros
 `.trim() 
 conn.reply(m.chat, info, text, { quoted: m, contextInfo: { externalAdReply:{title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: false, sourceUrl:``}, mentionedJid: [ownum]}})
 }
-handler.help = ['infobot', 'speed']
-handler.tags = ['info', 'tools']
-handler.command = /^(ping|speed|infobot)$/i
+handler.help = ['info']
+handler.tags = ['info']
+handler.command = /^(info|botinfo|infobot)$/i
 export default handler
 
 function clockString(ms) {
