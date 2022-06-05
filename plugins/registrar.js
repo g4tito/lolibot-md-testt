@@ -20,9 +20,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   user.registered = true
   let sn = createHash(m.sender, 7)
   //createHash('md5').update(m.sender).digest('hex')
-  let reuser = await this.profilePictureUrl(m.sender, 'image')
+  let reuser = await conn.profilePictureUrl(m.sender, 'image')
   try {
-    let reuser = await this.profilePictureUrl("51940617554-1604073088@g.us", 'image')
+    let reuser = await conn.profilePictureUrl("51940617554-1604073088@g.us", 'image')
   } catch (e) {
     
   } finally {
