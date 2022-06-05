@@ -5,7 +5,8 @@ let teks = `\t\t\t*‧ 🏷️ Mencionar Usuarios 🏷️ ‧*
 
 *• Mensaje:* ${text ? text : '×'}
 
-*• Etiquetas:*`
+*• Etiquetas:*
+`
 for (let mem of participants) {
 teks += `- @${mem.id.split('@')[0]}\n`
 }
