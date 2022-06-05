@@ -35,7 +35,7 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-await conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', `${usedPrefix}creador`], ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', `${usedPrefix}menu`]], m)
+await conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
 }
 
 handler.help = ['reg']
