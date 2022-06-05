@@ -1,8 +1,8 @@
-import db from '../lib/database.js'
+//import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
-import { xpRange } from '../lib/levelling.js'
-import { plugins } from '../lib/plugins.js'
+//import { xpRange } from '../lib/levelling.js'
+//import { plugins } from '../lib/plugins.js'
 import fs from 'fs'
 
 let tags = {
@@ -35,21 +35,8 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
-│
-│ 🧱 Limit : *%limit Limit*
-│ 🦸🏼‍♂️ Role : *%role*
-│ 🔼 Level : *%level (%exp / %maxexp)*
-│ 💫 Total XP : %totalexp ✨
-│ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
-│
-│ 📈 Uptime: *%uptime (%muptime)*
-│ 📊 Database: %rtotalreg of %totalreg
-╰────
-%readmore`.trimStart(),
+
+`.trimStart(),
   header: '╭─「 %category 」',
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
@@ -61,8 +48,8 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, limit, level, role } = db.data.users[m.sender]
-    let { min, xp, max } = xpRange(level, global.multiplier)
+    //let { exp, limit, level, role } = db.data.users[m.sender]
+    //let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'id'
@@ -145,10 +132,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       npmname: _package.name,
       npmdesc: _package.description,
       version: _package.version,
-      exp: exp - min,
-      maxexp: xp,
-      totalexp: exp,
-      xp4levelup: max - exp,
+      //exp: exp - min,
+      //maxexp: xp,
+      //totalexp: exp,
+      //xp4levelup: max - exp,
       github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
