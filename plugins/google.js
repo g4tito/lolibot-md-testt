@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
   let full = /goo$/i.test(command)
   let text = args.join` `
   if (!text) return conn.reply(m.chat, `*Ingrese un texto que desea buscar*\n\n- Ejemplo: ${usedPrefix + command} Minecraft`, m)
-  conn.reply(m.chat, wait, m)
+  await conn.reply(m.chat, wait, m)
   let url = 'https://google.com/search?q=' + encodeURIComponent(text)
   let search = await googleIt({ query: text })
   let msg = search.map(({ title, link, snippet}) => {
