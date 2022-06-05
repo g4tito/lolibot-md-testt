@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     //let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.db.data.users[who]
     //let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let { min, xp, max } = xpRange(user.level, global.multiplier)
+    let { min, xp, max } = xpRange(who.level, global.multiplier)
     let username = conn.getName(who)
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
