@@ -22,7 +22,7 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
   //createHash('md5').update(m.sender).digest('hex')
   let reuser = './src/avatar_contact.png'
   try {
-    let reuser = await conn.getProfilePicture(m.sender)
+    let reuser = await conn.profilePictureUrl(m.sender)
   } catch (e) {
   	
   } finally {
