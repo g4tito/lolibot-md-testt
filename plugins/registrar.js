@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (e) {
     
   } finally {
-  let repp = await(await fetch(reuser)).buffer()
+  let repp = await conn.getFile(reuser)
   let retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
 
  *◦ Nombre:* ${name}
@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
  }
 }
 
