@@ -20,13 +20,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   user.registered = true
   let sn = createHash(m.sender, 7)
   //createHash('md5').update(m.sender).digest('hex')
-  let reuser = await conn.profilePictureUrl(m.sender)
+  let reuser = await this.profilePictureUrl(m.sender)
   try {
-    let reuser = await conn.profilePictureUrl("51940617554-1604073088@g.us")
+    let reuser = await this.profilePictureUrl("51940617554-1604073088@g.us")
   } catch (e) {
     
   } finally {
-  let repp = await conn.getFile(reuser)
+  let repp = await this.getFile(reuser)
   let retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
 
  *◦ Nombre:* ${name}
@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-conn.sendHydrated(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, 'https://github.com/g4tito/lolibot-md', 'Github', null, null, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+this.sendHydrated(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, 'https://github.com/g4tito/lolibot-md', 'Github', null, null, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
 //conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
  }
 }
