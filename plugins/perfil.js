@@ -54,7 +54,6 @@ let handler = async (m, { conn, usedPrefix }) => {
 
  *◦ Nombre:* ${username}
  *◦ Tag:* @${who.replace(/@.+/, '')}
-// *◦ Bio:* ${about ? `${about}` : '×'}
  *◦ Número:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
  *◦ Link:* wa.me/${who.split`@`[0]}
  *◦ Nivel:* ${level}
