@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (e) {
     
   } finally {
-  let repp = await this.getFile(reuser)
+  let repp = await conn.getFile(reuser)
   let retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
 
  *◦ Nombre:* ${name}
