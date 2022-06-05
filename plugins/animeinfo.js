@@ -17,11 +17,7 @@ let animeingfo = `✨ *• Titulo:* ${title}
 ❤️ *• Score:* ${score}
 👥 *• Miembros:* ${members}
 💚 *• Sinopsis:* ${synopsis}
-🌐 *• URL*: ${url}
-
-${start_date}
-${end_date}
-${mal_id}`
+🌐 *• URL*: ${url}`
 conn.sendFile(m.chat, image_url, '', animeingfo, m)
 }
 
