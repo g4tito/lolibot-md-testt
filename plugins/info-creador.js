@@ -1,7 +1,6 @@
-/*import fs from 'fs'
-
 function handler(m, { conn }) {
-const data = global.owner.filter(([id, isCreator]) => id && isCreator)
+let id = global.owner
+let name = this.getName(global.owner[0] + '@s.whatsapp.net')
 this.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 }
 
@@ -9,10 +8,10 @@ handler.help = ['creador']
 handler.tags = ['info']
 handler.command = /^(owner|creator|creador|propietario)$/i
 
-export default handler*/
+export default handler
 
 
-let handler = async function (m, { conn }) {
+/*let handler = async function (m, { conn }) {
   let list = []
   let owner = [global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0]]
   for (let i of owner.map(v => v + '@s.whatsapp.net')) {
@@ -32,5 +31,5 @@ handler.help = ['creador']
 handler.tags = ['info']
 handler.command = /^(creador|owner|creator)$/i
 
-export default handler
+export default handler*/
 
