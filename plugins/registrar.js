@@ -35,8 +35,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-conn.sendHydrated(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, 'https://github.com/g4tito/lolibot-md', 'Github', null, null, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
-//conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+//conn.sendHydrated(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, 'https://github.com/g4tito/lolibot-md', 'Github', null, null, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp.data, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
  }
 }
 
