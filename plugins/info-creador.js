@@ -23,7 +23,7 @@ let handler = async function (m, { conn }) {
     })
   }
   await conn.sendMessage(m.chat, {
-    "displayName": `${list.length} Contact`,
+    "displayName": `7 Contacts`,
     "contacts": list
   }, 'contactsArrayMessage', { quoted: m })
 }
