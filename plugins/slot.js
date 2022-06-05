@@ -88,7 +88,7 @@ function clockString(seconds) {
   let hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
   let mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
   let sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
-  let return dDisplay + hDisplay + mDisplay + sDisplay;
+  return dDisplay + hDisplay + mDisplay + sDisplay;
 };
 
 function shortNum(num) {
