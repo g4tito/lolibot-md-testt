@@ -11,7 +11,7 @@ let cz = crz.getRandom()
 let ship = `\t\t*‧ ${cz} La pareja del dia ${cz} ‧*
 
 *${user(a)} + ${user(b)}*`
-m.reply(ship)
+m.reply(ship, null, { contextInfo: { mentionedJid: [a, b] } })
 }
 
 handler.help = ['ship']
