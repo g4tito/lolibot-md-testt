@@ -4,10 +4,13 @@ if (!l) l = ''
 if (!r) r = ''
 conn.reply(m.chat, l + readMore + r, m)
 }
-handler.help = ['readmore', 'spoiler'].map(v => v + ' <teks>|<teks>')
+
+handler.help = ['leermas']
 handler.tags = ['tools']
-handler.command = /^(spoiler|hidetext|readmore|selengkapnya)$/i
+handler.command = /^(spoiler|hidetext|readmore|selengkapnya|leermas)$/i
+
 export default handler
+
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
