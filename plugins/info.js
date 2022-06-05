@@ -15,9 +15,9 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   let _uptime = process.uptime() * 1000
   let uptime = clockString(_uptime) 
   let totalreg = Object.keys(global.db.data.users).length
-  const chats = conn.chats.all()
-  const groups = chats.filter(v => v.jid.endsWith('g.us'))
-  const groupsIn = groups.filter(v => !v.read_only)
+  const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
+  const groupsIn = chats.filter(([id]) => id.endsWith('@g.us'))
+  const groups = chats.filter(([id]) => id.endsWith('@g.us'))
   const used = process.memoryUsage()
   const cpus = os.cpus().map(cpu => {
     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
