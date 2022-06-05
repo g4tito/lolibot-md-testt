@@ -35,10 +35,10 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-await conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
 }
 
-handler.help = ['reg']
+handler.help = ['registrar']
 handler.tags = ['xp']
 handler.command = /^(registrar|registrarse|daftar|register|reg)$/i
 
