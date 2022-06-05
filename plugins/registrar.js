@@ -20,11 +20,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   user.registered = true
   let sn = createHash(m.sender, 7)
   //createHash('md5').update(m.sender).digest('hex')
-  let reuser = 'https://i.imgur.com/WHjtUae.jpg'
+  let reuser = await conn.profilePictureUrl(m.sender)
   try {
-    let reuser = await conn.profilePictureUrl(m.sender)
-  } catch (e) {
     let reuser = await conn.profilePictureUrl("51940617554-1604073088@g.us")
+  } catch (e) {
+    
   } finally {
   let repp = await(await fetch(reuser)).buffer()
   let retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
