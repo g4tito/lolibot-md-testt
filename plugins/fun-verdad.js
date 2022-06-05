@@ -3,7 +3,7 @@ conn.reply(m.chat,`*Verdad:*\n“${pickRandom(global.verdad)}”`, m)
 }
 
 handler.help = ['verdad']
-handler.tags = ['fun']
+handler.tags = ['game']
 handler.command = /^(verdad|v)/i
 
 export default handler
