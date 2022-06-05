@@ -42,7 +42,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     }
     let _pp = await(await fetch(pp)).buffer()
-    let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
+    //let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.db.data.users[who]
     //let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -54,7 +54,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
  *◦ Nombre:* ${username}
  *◦ Tag:* @${who.replace(/@.+/, '')}
- *◦ Bio:* ${about ? `${about}` : 'Sin info'}
+// *◦ Bio:* ${about ? `${about}` : '×'}
  *◦ Número:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
  *◦ Link:* wa.me/${who.split`@`[0]}
  *◦ Nivel:* ${level}
@@ -62,13 +62,13 @@ let handler = async (m, { conn, usedPrefix }) => {
  *◦ Exp nivel:* ${exp - min}/${max}
  *◦ Limite:* ${limit}
  *◦ Premium:* ${prem ? 'Si' : 'No'}
- *◦ Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '-'}
+ *◦ Ultimo claim:* ${lastclaim > 0 ? `${formatDate(lastclaim)}` : '×'}
 
  *◦ Registrado:* ${registered ? 'Si': 'No'}
- *◦ Fecha:* ${registered ? `${formatDate(regTime)}` : '-'}
- *◦ Hora:* ${registered ? `${formatHour(regTime)}` : '-'}
- *◦ Nombre:* ${registered ? `${name}` : '-'}
- *◦ Edad:* ${registered ? `${age} años` : '-'}`
+ *◦ Fecha:* ${registered ? `${formatDate(regTime)}` : '×'}
+ *◦ Hora:* ${registered ? `${formatHour(regTime)}` : '×'}
+ *◦ Nombre:* ${registered ? `${name}` : '×'}
+ *◦ Edad:* ${registered ? `${age} años` : '×'}`
     let mentionedJid = [who]
     conn.sendFile(m.chat, repp.data, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
 }
