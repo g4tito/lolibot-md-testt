@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
     let jackpot = Math.ceil(money * 5)
     let win = Math.ceil(money * 2)
     if (money < 70) throw 'Minimo 70 de dinero'
-    let users = global.DATABASE._data.users
+    let users = db.data.users
     if (money > users[m.sender].money) throw 'Su dinero no es suficiente'
     if (new Date - conn.slot[m.sender].lastslot > 3000) {
 
@@ -53,20 +53,20 @@ let handler = async (m, { conn, text }) => {
         end = "";
         hasil = `*Ganaste x3!*\n+${shortNum(jackpot)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
-        global.DATABASE._data.users[m.sender].money += jackpot
+        db.data.users[m.sender].money += jackpot
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
 
     } else if (a == b || a == c || b == c) {
         end = "";
         hasil = `*Ganaste x2!*\n+${shortNum(win)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
-        global.DATABASE._data.users[m.sender].money += win
+        db.data.users[m.sender].money += win
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     } else {
         end = "";
         hasil = `*Suerte la próxima!*\n-${shortNum(_money)} de Dinero`;
         gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} *⇐*\n${x[2]} | ${y[2]} | ${z[2]}`;
-        global.DATABASE._data.users[m.sender].money -= _money * 1
+        db.data.users[m.sender].money -= _money * 1
         await conn.fakeReply(m.chat, `*[ 🎰 SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
   } else m.reply(`Espere ${waktur}`)
@@ -84,11 +84,11 @@ function clockString(seconds) {
   let m = Math.floor((seconds / (1000 * 60)) % 60);
   let s = Math.floor((seconds / 1000) % 60);
   
-  dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
-  hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
-  mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
-  sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
-  return dDisplay + hDisplay + mDisplay + sDisplay;
+  let dDisplay = d > 0 ? d + (d == 1 ? " dia, " : " Dias, ") : "";
+  let hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " Horas, ") : "";
+  let mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " Minutos, ") : "";
+  let sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " Segundos") : "";
+  let return dDisplay + hDisplay + mDisplay + sDisplay;
 };
 
 function shortNum(num) {
