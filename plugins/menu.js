@@ -144,7 +144,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
-    conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', quoted: m, caption: text.trim(), contextInfo: { mentionedJid: [m.sender] } })
+    m.reply(text.trim())
+    //conn.sendMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', quoted: m, caption: text.trim(), contextInfo: { mentionedJid: [m.sender] } })
 
      /*conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
       ['Donate', '/donasi'],
