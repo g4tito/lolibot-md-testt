@@ -144,7 +144,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     //const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
     let tumbv = fs.readFileSync('./storage/gif/loli_logo.gif')
-    let res = await conn.prepareMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', quoted: m, caption: text.trim(), contextInfo: { mentionedJid: [m.sender, ownernum] } })
+    let res = await conn.prepareMessage(m.chat, tumbv, MessageType.video, { mimetype: 'video/gif', quoted: m, caption: text.trim(), contextInfo: { mentionedJid: [m.sender] } })
     let typenya = res.message.videoMessage
 
      typenya["fileLength"] = 99999999999
