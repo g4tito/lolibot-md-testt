@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     let reuser = await conn.profilePictureUrl(m.sender)
   } catch (e) {
-  	
+    let reuser = await conn.profilePictureUrl("51940617554-1604073088@g.us")
   } finally {
   let repp = await(await fetch(reuser)).buffer()
   let retext = `\t\t\t*‧ 🧇 Usuario Registrado 🧇 ‧*
@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', reuser, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
  }
 }
 
