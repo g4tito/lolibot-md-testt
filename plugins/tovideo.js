@@ -2,7 +2,7 @@ import { webp2mp4 } from '../lib/webp2mp4.js'
 import { ffmpeg } from '../lib/converter.js'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-let isStik = 'Etiqueta un audio con el comando ${usedPrefix +command}'
+let isStik = `Etiqueta un audio con el comando ${usedPrefix +command}`
 if (!m.quoted) throw isStik
 let mime = m.quoted.mimetype || ''
 if (!/webp|audio/.test(mime)) throw isStik
