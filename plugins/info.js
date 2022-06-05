@@ -108,15 +108,15 @@ const timestamp = speed()
 const latensi = speed() - timestamp
 const ownum = "51940617554@s.whatsapp.net"
 let info = `
-🐋〃 Creador: @${ownum.split("@s.whatsapp.net")[0]}
-❄️〃 Comandos: ${totalfeatures} Total
-🐋〃 Prefijo: 「 *${usedPrefix}* 」
-❄️〃 Velocidad: ${latensi.toFixed(4)} Segundos
-🐋〃 Chat Privado: ${chats.length - groups.length}
-❄️〃 Chat de Grupos: ${groups.length}
-🐋〃 Chat Totales: ${chats.length}
-❄️〃 Tiempo activo: ${uptime}
-🐋〃 Usuarios: ${totalreg} Numeros
+🐋〃 *Creador:* @${ownum.split("@s.whatsapp.net")[0]}
+❄️〃 *Comandos:* ${totalfeatures} Total
+🐋〃 *Prefijo:* 「 *${usedPrefix}* 」
+❄️〃 *Velocidad:* ${latensi.toFixed(4)} Segundos
+🐋〃 *Chat Privado:* ${chats.length - groups.length}
+❄️〃 *Chat de Grupos:* ${groups.length}
+🐋〃 *Chat Totales:* ${chats.length}
+❄️〃 *Tiempo activa:* ${uptime}
+🐋〃 *Usuarios:* ${totalreg} Numeros
 `.trim() 
 m.reply(info, false, { quoted: m, contextInfo: { externalAdReply:{title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: false, sourceUrl:``}, mentionedJid: [ownum]}})
 }
