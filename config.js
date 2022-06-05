@@ -61,7 +61,7 @@ global.author = '💌 Lobita & Gatito 💫'
 
 global.wm = '★𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝★'
 global.igfg = '★𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝★'
-global.wait = '*⌛ _Cargando..._ ▬▬▬▭*'
+global.wait = '*↻ Esperɑ soy lentɑ . . .*'
 
 global.multiplier = 9999 // The higher, The harder levelup
 
