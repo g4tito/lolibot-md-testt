@@ -7,7 +7,6 @@ if (!text) return conn.reply(m.chat, '*[❗𝐈𝐍𝐅𝐎❗] 𝙸𝙽𝙶𝚁
 let url = 'https://google.com/search?q=' + encodeURIComponent(text)
 let search = await googleIt(text)
 let msg = search.articles.map(({
-// header,
 title,
 url,
 description
@@ -21,7 +20,9 @@ await conn.sendFile(m.chat, ss, 'error.png', url + '\n\n' + msg, m)
 } catch (e) {
 m.reply(msg)
 }}
-handler.help = ['google', 'googlef'].map(v => v + ' <pencarian>')
+
+handler.help = ['google']
 handler.tags = ['internet']
-handler.command = /^googlef?$/i
+handler.command = /^(google)$/i
+
 export default handler
