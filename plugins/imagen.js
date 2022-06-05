@@ -1,4 +1,4 @@
-/*import { googleImage } from '@bochilteam/scraper'
+import { googleImage } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
@@ -7,9 +7,7 @@ await m.reply(`${JSON.stringify(res, null, 1)}`)
 let image = res.getRandom()
 let teks = `\t\t\t‧ 🪴 *Imagen de Google* 🪴 ‧
 
-*• Búsqueda:* ${text}
-*• Tamaño:* ${width + '×' + height} Pixeles
-*• Link:* ${url}`
+*• Link:* ${image}`
 conn.sendFile(m.chat, image, 'error.png', teks, m)
 }
 
@@ -17,10 +15,10 @@ handler.help = ['imagen']
 handler.tags = ['internet']
 handler.command = /^(gimage|image|imagen)$/i
 
-export default handler*/
+export default handler
 
 
-import { promisify } from 'util'
+/*import { promisify } from 'util'
 import fetch from 'node-fetch'
 import _gis from 'g-i-s'
 
@@ -43,4 +41,4 @@ export default handler
 
 function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
-}
+}*/
