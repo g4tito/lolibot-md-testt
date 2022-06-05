@@ -30,7 +30,7 @@ export default handler*/
 
 
 import PhoneNumber from 'awesome-phonenumber'
-import levelling from '../lib/levelling'
+import levelling from '../lib/levelling.js'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix }) => {
