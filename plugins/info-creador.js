@@ -1,18 +1,36 @@
-import fs from 'fs'
+/*import fs from 'fs'
+
 function handler(m, { conn }) {
-let text = `
-*—◉ 𝙴𝙻 𝙽𝚄𝙼𝙴𝚁𝙾 𝙳𝙴 𝙼𝙸 𝙾𝚆𝙽𝙴𝚁 𝙴𝚂 wa.me/5219992095479*
-`.trim()   
-conn.reply(m.chat, text, m, {
-contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, 
-title: '𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝙲𝙸𝙾𝙽 - 𝙾𝚆𝙽𝙴𝚁',
-body: 'ʙʏ ᴛʜᴇ ᴍʏsᴛᴄ ﹣ ʙᴏᴛ',         
-previewType: 0, thumbnail: fs.readFileSync("./Menu2.jpg"),
-sourceUrl: `https://wa.me/5219992095479`}}})
 const data = global.owner.filter(([id, isCreator]) => id && isCreator)
 this.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
 }
-handler.help = ['owner', 'creator']
+
+handler.help = ['creador']
 handler.tags = ['info']
 handler.command = /^(owner|creator|creador|propietario)$/i
+
+export default handler*/
+
+
+let handler = async function (m, { conn }) {
+  let list = []
+  let owner = [global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0], global.owner[0]]
+  for (let i of owner.map(v => v + '@s.whatsapp.net')) {
+    let name = this.getName(global.owner[0] + '@s.whatsapp.net')
+    list.push({
+      "displayName": name,
+      "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:;${name};;;\nFN:${name}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Creador de la loli bot xD\nitem2.EMAIL;type=INTERNET:Gatito@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/g4tito/lolibot\nitem3.X-ABLabel:Github\nitem4.ADR:;;Perú;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+    })
+  }
+  await conn.sendMessage(m.chat, {
+    "displayName": `${list.length} Contact`,
+    "contacts": list
+  }, 'contactsArrayMessage', { quoted: m })
+}
+
+handler.help = ['creador']
+handler.tags = ['info']
+handler.command = /^(creador|owner|creator)$/i
+
 export default handler
+
