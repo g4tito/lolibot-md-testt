@@ -18,4 +18,4 @@ handler.tags = ['fun']
 handler.command = /^(ship|shiping)$/i
 handler.group = true
 
-exports default handler
+export default handler
