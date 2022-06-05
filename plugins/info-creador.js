@@ -1,7 +1,7 @@
 function handler(m, { conn }) {
-let data = global.owner
+let id = global.owner[0]
 let name = this.getName(global.owner[0] + '@s.whatsapp.net')
-this.sendContact(m.chat, data.map(([id]) => [id, name]), m)
+this.sendContact(m.chat, [id, name], m)
 }
 
 handler.help = ['creador']
