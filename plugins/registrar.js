@@ -35,15 +35,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`], ['🥮 MENU', `${usedPrefix}menu`]], m)
+conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['🐱 CREADOR', `${usedPrefix}creador`]], m)
 }
 
 handler.help = ['registrar']
 handler.tags = ['xp']
 handler.command = /^(registrar|registrarse|daftar|register|reg)$/i
 
-export default handler
-
+export default handler 
 
 function createHash(data, len) {
     return crypto.createHash("shake256", { outputLength: len })
