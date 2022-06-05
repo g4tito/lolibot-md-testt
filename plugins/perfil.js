@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     } catch {
 
     }
-    let _pp = await(await fetch(pp)).buffer()
+    //let _pp = await(await fetch(pp)).buffer()
     //let about = (await conn.getStatus(who).catch(console.error) || {}).status || ''
     let { name, limit, exp, lastclaim, registered, regTime, age, level } = global.db.data.users[who]
     //let { min, xp, max } = levelling.xpRange(level, global.multiplier)
