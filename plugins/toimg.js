@@ -1,7 +1,7 @@
 import { webp2png } from '../lib/webp2mp4.js'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-let isStik = 'Etiqueta un sticker con el comando ${usedPrefix}toimg'
+let isStik = `Etiqueta un sticker con el comando ${usedPrefix + command}`
 if (!m.quoted) throw isStik
 const q = m.quoted || m
 let mime = q.mediaType || ''
