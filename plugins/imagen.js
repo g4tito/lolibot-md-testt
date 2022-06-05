@@ -2,8 +2,8 @@ import { googleImage } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
+await conn.reply(m.chat, wait, m)
 const res = await googleImage(text)
-await m.reply(`${JSON.stringify(res, null, 1)}`)
 let image = res.getRandom()
 let teks = `\t\t\t‧ 🪴 *Imagen de Google* 🪴 ‧
 
