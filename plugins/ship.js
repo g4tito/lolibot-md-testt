@@ -5,8 +5,6 @@ function handler(m, { groupMetadata, command, conn }) {
 let ps = groupMetadata.participants.map(v => v.id)
 let a = ps.getRandom()
 let b = ps.getRandom()
-
-let ps = groupMetadata.participants.map(v => v.id)let a = ps.getRandom()let b = ps.getRandom()
 let crz = (pickRandom(['💖', '❤', '💞', '💓', '💗', '❣', '💟']))
 
 let ship = `\t\t*‧ ${crz} La pareja del dia ${crz} ‧*
