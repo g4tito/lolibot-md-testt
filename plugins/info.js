@@ -89,6 +89,7 @@ import os from 'os'
 import util from 'util'
 import sizeFormatter from 'human-readable'
 import MessageType from '@adiwajshing/baileys'
+import speed from 'performance-now'
 import fs from 'fs'
 import { performance } from 'perf_hooks'
 
