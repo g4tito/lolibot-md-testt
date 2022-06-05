@@ -1,14 +1,17 @@
 let handler = async (m, { conn, text, command }) => {
-    let yh = global.loli
-    let url = yh[Math.floor(Math.random() * yh.length)]
-    conn.sendButton(m.chat, `ʀᴀɴᴅᴏᴍ ʟᴏʟɪ - ɪѕ ᴄᴜᴛᴇ 🥺`.trim(), author, url, [['🔄 𝚂𝙸𝙶𝚄𝙸𝙴𝙽𝚃𝙴 🔄', `/${command}`]], m)
-  }
-  handler.command = /^(loli)$/i
-  handler.tags = ['anime']
-  handler.help = ['loli']
-  export default handler
-  
-  global.loli = [
+  let yh = global.loli
+  let url = yh[Math.floor(Math.random() * yh.length)]
+  conn.sendFile(m.chat, url, 'error.png', '*LOLI 🥺💖*', m)
+}
+
+handler.help = ['loli']
+handler.tags = ['anime']
+handler.command = /^(loli)$/i
+
+export default handler
+
+
+global.loli = [
     "https://i.imgur.com/cvqoK7l.jpg",
     "https://i.imgur.com/r1rm2ry.jpg",
     "https://i.imgur.com/8XO7t9a.jpg",
