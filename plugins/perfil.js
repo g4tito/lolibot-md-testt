@@ -36,7 +36,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, usedPrefix }) => {
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     try {
-        pp = await conn.profilePictureUrl(who, 'image')
+        let pp = await conn.profilePictureUrl(who, 'image')
     } catch {
         pp = await conn.profilePictureUrl("51940617554-1604073088@g.us", 'image')
     }
