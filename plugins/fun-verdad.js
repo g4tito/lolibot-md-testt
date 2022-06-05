@@ -1,14 +1,17 @@
 let handler  = async (m, { conn }) => {
-conn.reply(m.chat,`*┌────「 𝚅𝙴𝚁𝙳𝙰𝙳 」─*\n*“${pickRandom(global.verdad)}”*\n*└────「 𝙼𝚈𝚂𝚃𝙸𝙲 」─*`, m)
+conn.reply(m.chat,`*Verdad:*\n“${pickRandom(global.verdad)}”`, m)
 }
+
 handler.help = ['verdad']
 handler.tags = ['fun']
-handler.command = /^verdad/i
+handler.command = /^(verdad|v)/i
+
 export default handler
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
+
 
 global.verdad = [
 "¿Alguna vez te ha gustado alguien? ¿Cuánto tiempo?",
@@ -33,16 +36,16 @@ global.verdad = [
   "¿Qué logros has obtenido este año?",
   "¿Cuál es tu peor hábito en la escuela?", "¿Qué programa de televisión odias más? ¡Da la razón!", "¿Cuál es el vestido más feo (en su opinión) que ha usado y cuándo lo usó?", "¿Qué es lo peor (chisme) que has dicho sobre tu amigo?","¿Qué es lo más vergonzoso de ti?"," ¿Qué es lo primero que ves cuando miras a otra persona (del sexo opuesto)?", 
 "¿Qué es lo primero que te viene a la mente cuando te miras al espejo?","¿Que es lo mas tonto que has hecho en tu vida?"," ¿Cuál es el peor sueño que has tenido?"," ¿Cuál es el sueño más loco que puedes recordar hasta ahora?",
-" ¿Cuál es tu peor rasgo en tu opinión?", 
-" ¿Qué rasgo te gustaría cambiar de ti mismo?", 
-" ¿Qué rasgo te gustaría cambiar en tu amigo?", 
-" ¿Qué harías si tu novio te dijera que tienes mala nariz o dedos?", 
-" ¿En qué piensas antes de dormir? ej .: fantasear con una pareja, etc.", 
+"¿Cuál es tu peor rasgo en tu opinión?", 
+"¿Qué rasgo te gustaría cambiar de ti mismo?", 
+"¿Qué rasgo te gustaría cambiar en tu amigo?", 
+"¿Qué harías si tu novio te dijera que tienes mala nariz o dedos?", 
+"¿En qué piensas antes de dormir? ej .: fantasear con una pareja, etc.", 
 "¿Qué crees que se destaca más de ti?"," ¿Qué parte del cuerpo de tu amigo te gusta más y desearías tener?", 
 "¿Qué parte de tu cuerpo odias más?"," De todas las clases de la escuela, ¿a qué clase le gustaría ingresar y qué clase le gustaría evitar?", 
 "¡Describe a tu amigo más cercano!"," ¡Descríbete en una palabra!"," ¿Qué películas y canciones te han hecho llorar?", 
-" ¿Qué es algo que has mantenido en secreto hasta ahora y nadie lo ha descubierto?", 
-" ¿Qué es lo más romántico que alguien (del sexo opuesto) te ha hecho o regalado?", 
+"¿Qué es algo que has mantenido en secreto hasta ahora y nadie lo ha descubierto?", 
+"¿Qué es lo más romántico que alguien (del sexo opuesto) te ha hecho o regalado?", 
 "¿Qué es lo más desagradable que has experimentado?", 
 " Si nacieras de nuevo y tuvieras que ser uno de tus amigos, ¿a quién elegirías ser?", 
 " Si tienes superpoder / superpoder, ¿qué quieres hacer?", 
