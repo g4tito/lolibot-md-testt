@@ -1,8 +1,8 @@
-//import db from '../lib/database.js'
+import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
-//import { xpRange } from '../lib/levelling.js'
-//import { plugins } from '../lib/plugins.js'
+import { xpRange } from '../lib/levelling.js'
+import { plugins } from '../lib/plugins.js'
 import fs from 'fs'
 
 let tags = {
