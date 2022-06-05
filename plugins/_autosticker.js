@@ -25,7 +25,7 @@ if (isUrl(m.text)) stiker = await sticker(false, m.text.split(/\n| /i)[0], packn
 else return
 }
 if (stiker) {
-await this.sendFile(m.chat, stiker, null, { asSticker: true })
+await this.sendFile(m.chat, stiker, null, { asSticker: true }, m)
 }}
 return !0
 }
