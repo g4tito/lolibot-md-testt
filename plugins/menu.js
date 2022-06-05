@@ -1,3 +1,4 @@
+import MessageType from '@adiwajshing/baileys'
 //import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
