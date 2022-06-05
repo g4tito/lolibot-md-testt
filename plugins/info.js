@@ -93,7 +93,7 @@ import speed from 'performance-now'
 import fs from 'fs'
 import { performance } from 'perf_hooks'
 
-let handler = async (m, { conn, usedPrefix }) => {
+let handler = async (m, { conn, text, usedPrefix }) => {
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime) 
 let totalreg = Object.keys(global.db.data.users).length
@@ -118,7 +118,7 @@ let info = `
 ❄️〃 Tiempo activo: ${uptime}
 🐋〃 Usuarios: ${totalreg} Numeros
 `.trim() 
-conn.reply(m.chat, info, text, { quoted: m, contextInfo: { externalAdReply:{title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: false, sourceUrl:``}, mentionedJid: [ownum]}})
+m.reply(info, false, { quoted: m, contextInfo: { externalAdReply:{title: `↷✦╎Info - Bot╎💌˖ ⸙`, previewType:"PHOTO",thumbnail: false, sourceUrl:``}, mentionedJid: [ownum]}})
 }
 handler.help = ['info']
 handler.tags = ['info']
