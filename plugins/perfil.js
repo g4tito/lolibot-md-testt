@@ -49,7 +49,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let username = conn.getName(who)
     let math = max - xp
     let prem = global.prems.includes(who.split`@`[0])
-    let repp = await conn.getFile(reuser)
+    let repp = await conn.getFile(who)
     let str = `\t\t\t\t\t*‧ 🐣 Perfil Info 🐣 ‧*
 
  *◦ Nombre:* ${username}
