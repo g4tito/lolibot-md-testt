@@ -35,21 +35,7 @@ let handler = async function (m, { conn, text, usedPrefix, command}) {
 
  *◦ Fecha:* ${date}
  *◦ Hora:* ${time}`
-let py =  await conn.prepareMessage(m.chat, repp, MessageType.image)
-let gbutsan = [
-{buttonId: `${usedPrefix}menu`, buttonText: {displayText: '🍟 MENU'}, type: 1},
-{buttonId: `${usedPrefix}owner`, buttonText: {displayText: '🍧 CREADOR'}, type: 1}
-]
-let gbuttonan = {
-imageMessage: py.message.imageMessage,
-contentText: retext,
-footerText: 'No olvides tu *codigo* por qué sera necesario para próximas actuaciones',
-buttons: gbutsan,
-headerType: 4
-}
-conn.sendMessage(m.chat, gbuttonan, MessageType.buttonsMessage, { quoted: m })
-}
-conn.sendMessage(m.sender, `Codigo de registro: ${sn}`, MessageType.text, { quoted: m })
+await conn.sendButton(m.chat, retext, 'No olvides tu *codigo* por qué sera necesario para futuras actuaciones', repp, [['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', `${usedPrefix}creador`], ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', `${usedPrefix}menu`]], m)
 }
 
 handler.help = ['reg']
