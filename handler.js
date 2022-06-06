@@ -20,15 +20,11 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function (
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} groupsUpdate 
  */
 export async function handler(chatUpdate) {
-    this.msgqueque = this.msgqueque || []
-    if (!chatUpdate)
-        return
-    this.pushMessage(chatUpdate.messages).catch(console.error)
+    //this.msgqueque = this.msgqueque || []
+    //if (!chatUpdate) return this.pushMessage(chatUpdate.messages).catch(console.error)
     let m = chatUpdate.messages[chatUpdate.messages.length - 1]
-    if (!m)
-        return
-    if (global.db.data == null)
-        await global.loadDatabase()
+    if (!m) return
+    if (global.db.data == null) await global.loadDatabase()
     try {
         m = smsg(this, m) || m
         if (!m)
