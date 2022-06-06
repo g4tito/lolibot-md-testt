@@ -22,7 +22,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))*/
 
 import { areJidsSameUser } from '@adiwajshing/baileys'
 
-let handler = async (m, { command, text, groupMetadata }) => {
+let handler = async (m, { command, text, groupMetadata, participants }) => {
   let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
   //if (!m.chat) return m.reply('Etiqueta a alguien del grupo para eliminar!')
   //if (!groupMetadata.participants.some(v => v.jid === user)) 
